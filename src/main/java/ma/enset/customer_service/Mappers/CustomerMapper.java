@@ -2,6 +2,7 @@ package ma.enset.customer_service.Mappers;
 
 import ma.enset.customer_service.Dto.CustomerRequest;
 import ma.enset.customer_service.Entities.Customer;
+import ma.enset.customer_service.stub.CustomerServiceOuterClass;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
@@ -16,10 +17,10 @@ public class CustomerMapper {
 
     }
 
-    /*public CustomerServiceOuterClass.Customer fromCustomer(Customer customer){
+    public CustomerServiceOuterClass.Customer fromCustomer(Customer customer){
         return modelMapper.map(customer, CustomerServiceOuterClass.Customer.Builder.class).build();
     }
     public Customer fromGrpcCustomerRequest(CustomerServiceOuterClass.CustomerRequest customerRequest){
         return modelMapper.map(customerRequest, Customer.class);
-    }*/
+    }
 }

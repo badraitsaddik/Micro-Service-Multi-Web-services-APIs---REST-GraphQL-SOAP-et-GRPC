@@ -1,11 +1,17 @@
 package ma.enset.customer_service.Web;
 
+import io.grpc.stub.StreamObserver;
 import ma.enset.customer_service.Entities.Customer;
 import ma.enset.customer_service.Mappers.CustomerMapper;
 import ma.enset.customer_service.Respositories.CustomerRepository;
+import ma.enset.customer_service.stub.CustomerServiceGrpc;
+import ma.enset.customer_service.stub.CustomerServiceOuterClass;
+import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.stream.Collectors;
+@GrpcService
 
 public class CustomerGrpcService extends CustomerServiceGrpc.CustomerServiceImplBase {
     @Autowired
@@ -51,3 +57,4 @@ public class CustomerGrpcService extends CustomerServiceGrpc.CustomerServiceImpl
         responseObserver.onCompleted();
     }
 }
+
